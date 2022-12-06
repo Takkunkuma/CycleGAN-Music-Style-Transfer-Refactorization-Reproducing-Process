@@ -8,6 +8,7 @@ from tensorflow.keras.optimizers import Adam
 
 from tf2_module import build_generator, build_discriminator_classifier, softmax_criterion
 from tf2_utils import get_now_datetime, save_midis
+print("tf2_classifier.py: All dependencies installed!")
 
 
 class Classifier(object):
@@ -82,9 +83,9 @@ class Classifier(object):
                                                              max_to_keep=5)
 
     def train(self, args):
-
         # create training list (origin data with corresponding label)
         # Label for A is (1, 0), for B is (0, 1)
+        # whatever is in format will go into {}
         dataA = glob('./datasets/{}/train/*.*'.format(self.dataset_A_dir))
         dataB = glob('./datasets/{}/train/*.*'.format(self.dataset_B_dir))
         labelA = [(1.0, 0.0) for _ in range(len(dataA))]

@@ -9,6 +9,8 @@ from tensorflow.keras.optimizers import Adam
 from tf2_module import build_generator, build_discriminator, abs_criterion, mae_criterion
 from tf2_utils import get_now_datetime, ImagePool, to_binary, load_npy_data, save_midis
 
+print(tf.__version__)
+print("tf2_model.py: All dependencies installed!")
 
 class CycleGAN(object):
 

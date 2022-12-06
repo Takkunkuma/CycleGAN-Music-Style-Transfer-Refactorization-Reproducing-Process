@@ -3,6 +3,7 @@ import numpy as np
 import copy
 import write_midi
 import tensorflow as tf
+print("tf2_utils.py: All dependencies installed!")
 
 
 # new added functions for cyclegan

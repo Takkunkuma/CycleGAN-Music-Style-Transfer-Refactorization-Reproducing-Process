@@ -2,6 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import Model, layers, Input
 from collections import namedtuple
+print("tf2_modules.py: all dependencies installed")
 
 
 def abs_criterion(pred, target):
@@ -324,5 +325,9 @@ if __name__ == '__main__':
                              64,
                              64))
 
-    model = build_generator(options)
-    print(model.summary())
+    model_gen = build_generator(options)
+    model_dis_class = build_discriminator_classifier(options)
+    model_dis = build_discriminator(options)
+    print(model_gen.summary())
+    print(model_dis.summary())
+    print(model_dis_class.summary())

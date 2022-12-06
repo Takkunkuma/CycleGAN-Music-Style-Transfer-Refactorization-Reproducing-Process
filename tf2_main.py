@@ -2,13 +2,14 @@ import argparse
 import os
 from tf2_model import CycleGAN
 from tf2_classifier import Classifier
+print(f"=====main ran correctly=====")
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--dataset_A_dir', dest='dataset_A_dir', default='CP_C', help='path of the dataset of domain A')
 parser.add_argument('--dataset_B_dir', dest='dataset_B_dir', default='CP_P', help='path of the dataset of domain B')
 parser.add_argument('--epoch', dest='epoch', type=int, default=10, help='# of epoch')
 parser.add_argument('--epoch_step', dest='epoch_step', type=int, default=10, help='# of epoch to decay lr')
-parser.add_argument('--batch_size', dest='batch_size', type=int, default=4, help='# images in batch')
+parser.add_argument('--batch_size', dest='batch_size', type=int, default=16, help='# images in batch')
 parser.add_argument('--time_step', dest='time_step', type=int, default=64, help='time step of pianoroll')
 parser.add_argument('--pitch_range', dest='pitch_range', type=int, default=84, help='pitch range of pianoroll')
 parser.add_argument('--ngf', dest='ngf', type=int, default=64, help='# of gen filters in first conv layer')
@@ -44,6 +45,14 @@ if __name__ == '__main__':
         os.makedirs(args.sample_dir)
     if not os.path.exists(args.test_dir):
         os.makedirs(args.test_dir)
+
+    print("=====Important Parameters=====")
+    print(f"=====Args Type: {args.type}=====")
+    print(f"=====Args Phase: {args.phase}=====")
+    print(f"=====Args Model: {args.model}=====")
+    print(f"=====Args batchsize: {args.batch_size}=====")
+    print(f"=====Args Dataset A:{args.dataset_A_dir}=====")
+    print(f"=====Args Dataset B:{args.dataset_B_dir}=====")
 
     if args.type == 'cyclegan':
 

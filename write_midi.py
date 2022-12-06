@@ -1,5 +1,6 @@
 import numpy as np
 import pretty_midi
+print('write_midi file: All dependencies installed')
 
 
 def set_piano_roll_to_instrument(piano_roll, instrument, velocity=100, tempo=120.0, beat_resolution=16):
